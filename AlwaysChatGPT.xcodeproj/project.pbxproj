@@ -7,19 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF0F5DC0298EF905001AB1AC /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0F5DBF298EF905001AB1AC /* Message.swift */; };
 		DF4FCCF0298DBFF000E7D226 /* AlwaysChatGPTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4FCCEF298DBFF000E7D226 /* AlwaysChatGPTApp.swift */; };
-		DF4FCCF2298DBFF000E7D226 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4FCCF1298DBFF000E7D226 /* ContentView.swift */; };
+		DF4FCCF2298DBFF000E7D226 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4FCCF1298DBFF000E7D226 /* RootView.swift */; };
 		DF4FCCF4298DBFF100E7D226 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4FCCF3298DBFF100E7D226 /* Assets.xcassets */; };
 		DF4FCCF7298DBFF100E7D226 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4FCCF6298DBFF100E7D226 /* Preview Assets.xcassets */; };
+		DF4FCD01298DC6AD00E7D226 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4FCD00298DC6AD00E7D226 /* RootViewModel.swift */; };
+		DFA46BBD29903AFC00B51F93 /* ChatGPT.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA46BBC29903AFC00B51F93 /* ChatGPT.swift */; };
+		DFA46BBF29903C2400B51F93 /* CompletionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA46BBE29903C2400B51F93 /* CompletionResponse.swift */; };
+		DFA46BC129903C3400B51F93 /* Choice.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA46BC029903C3400B51F93 /* Choice.swift */; };
+		DFA46BC929905C4C00B51F93 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA46BC829905C4C00B51F93 /* String.swift */; };
+		DFA46BCB29905CC800B51F93 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA46BCA29905CC800B51F93 /* View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF0F5DBF298EF905001AB1AC /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		DF4FCCEC298DBFF000E7D226 /* AlwaysChatGPT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlwaysChatGPT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF4FCCEF298DBFF000E7D226 /* AlwaysChatGPTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwaysChatGPTApp.swift; sourceTree = "<group>"; };
-		DF4FCCF1298DBFF000E7D226 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DF4FCCF1298DBFF000E7D226 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		DF4FCCF3298DBFF100E7D226 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF4FCCF6298DBFF100E7D226 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DF4FCCF8298DBFF100E7D226 /* AlwaysChatGPT.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AlwaysChatGPT.entitlements; sourceTree = "<group>"; };
+		DF4FCD00298DC6AD00E7D226 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		DFA46BBC29903AFC00B51F93 /* ChatGPT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPT.swift; sourceTree = "<group>"; };
+		DFA46BBE29903C2400B51F93 /* CompletionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionResponse.swift; sourceTree = "<group>"; };
+		DFA46BC029903C3400B51F93 /* Choice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Choice.swift; sourceTree = "<group>"; };
+		DFA46BC829905C4C00B51F93 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		DFA46BCA29905CC800B51F93 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		DFA46BCC2990678000B51F93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,21 +67,61 @@
 		DF4FCCEE298DBFF000E7D226 /* AlwaysChatGPT */ = {
 			isa = PBXGroup;
 			children = (
+				DFA46BC729905C3B00B51F93 /* Extensions */,
+				DFA46BBB29903AEC00B51F93 /* API */,
+				DF4FCD04298DC83A00E7D226 /* Models */,
+				DF4FCCFE298DC67400E7D226 /* Views */,
+				DF4FCCFF298DC6A200E7D226 /* ViewModels */,
 				DF4FCCEF298DBFF000E7D226 /* AlwaysChatGPTApp.swift */,
-				DF4FCCF1298DBFF000E7D226 /* ContentView.swift */,
 				DF4FCCF3298DBFF100E7D226 /* Assets.xcassets */,
+				DF4FCCF6298DBFF100E7D226 /* Preview Assets.xcassets */,
 				DF4FCCF8298DBFF100E7D226 /* AlwaysChatGPT.entitlements */,
-				DF4FCCF5298DBFF100E7D226 /* Preview Content */,
+				DFA46BCC2990678000B51F93 /* Info.plist */,
 			);
 			path = AlwaysChatGPT;
 			sourceTree = "<group>";
 		};
-		DF4FCCF5298DBFF100E7D226 /* Preview Content */ = {
+		DF4FCCFE298DC67400E7D226 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DF4FCCF6298DBFF100E7D226 /* Preview Assets.xcassets */,
+				DF4FCCF1298DBFF000E7D226 /* RootView.swift */,
 			);
-			path = "Preview Content";
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DF4FCCFF298DC6A200E7D226 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				DF4FCD00298DC6AD00E7D226 /* RootViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DF4FCD04298DC83A00E7D226 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DF0F5DBF298EF905001AB1AC /* Message.swift */,
+				DFA46BBE29903C2400B51F93 /* CompletionResponse.swift */,
+				DFA46BC029903C3400B51F93 /* Choice.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DFA46BBB29903AEC00B51F93 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				DFA46BBC29903AFC00B51F93 /* ChatGPT.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		DFA46BC729905C3B00B51F93 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DFA46BC829905C4C00B51F93 /* String.swift */,
+				DFA46BCA29905CC800B51F93 /* View.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +194,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF4FCCF2298DBFF000E7D226 /* ContentView.swift in Sources */,
+				DFA46BBF29903C2400B51F93 /* CompletionResponse.swift in Sources */,
+				DF4FCCF2298DBFF000E7D226 /* RootView.swift in Sources */,
+				DFA46BC129903C3400B51F93 /* Choice.swift in Sources */,
+				DF0F5DC0298EF905001AB1AC /* Message.swift in Sources */,
+				DFA46BBD29903AFC00B51F93 /* ChatGPT.swift in Sources */,
+				DFA46BCB29905CC800B51F93 /* View.swift in Sources */,
+				DF4FCD01298DC6AD00E7D226 /* RootViewModel.swift in Sources */,
+				DFA46BC929905C4C00B51F93 /* String.swift in Sources */,
 				DF4FCCF0298DBFF000E7D226 /* AlwaysChatGPTApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,7 +259,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -251,7 +313,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -269,11 +331,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"AlwaysChatGPT/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"AlwaysChatGPT/\"";
 				DEVELOPMENT_TEAM = 7Z2WHPKU8W;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AlwaysChatGPT/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -296,11 +360,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"AlwaysChatGPT/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"AlwaysChatGPT/\"";
 				DEVELOPMENT_TEAM = 7Z2WHPKU8W;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AlwaysChatGPT/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
