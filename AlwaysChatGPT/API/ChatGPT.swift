@@ -6,7 +6,6 @@ final class ChatGPT {
     
     @AppStorage("apiKey") private var apiKey: String = ""
     
-    private var historyList = [String]()
     private let urlSession = URLSession.shared
     private var urlRequest: URLRequest {
         let url = URL(string: "https://api.openai.com/v1/completions")!
@@ -33,9 +32,7 @@ final class ChatGPT {
         """
     }
     
-    private var historyListText: String {
-        historyList.joined()
-    }
+    @AppStorage("historyListText") private var historyListText: String = ""
     
     private func generateChatGPTPrompt(from text: String) -> String {
 //        var prompt = basePrompt + historyListText + "User: \(text)\nChatGPT:"
@@ -62,11 +59,11 @@ final class ChatGPT {
     }
     
     private func appendToHistoryList(userText: String, responseText: String) {
-        self.historyList.append("User: \(userText)\n\n\nChatGPT: \(responseText)<|im_end|>\n")
+        self.historyListText.append(" User: \(userText)\n\n\nChatGPT: \(responseText)<|im_end|>\n")
     }
     
     public func clearHistoryList() {
-        self.historyList.removeAll()
+        self.historyListText.removeAll()
     }
     
     public func sendMessageStream(text: String) async throws -> AsyncThrowingStream<String, Error> {

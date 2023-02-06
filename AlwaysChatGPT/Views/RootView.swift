@@ -12,39 +12,40 @@ struct RootView: View {
     
     @StateObject var viewModel = RootViewModel()
     
+    @AppStorage("historyListText") var historyListText = ""
+    
     var body: some View {
-        ScrollViewReader { proxy in
-            ScrollView {
-                LazyVStack(alignment: .center, spacing: 5) {
-                    ForEach(viewModel.messages) { message in
-                        HStack(alignment: .center, spacing: 0) {
-                            if message.isOutgoing { Spacer() }
-                            
-                            Text(message.text.withRenderedCode())
-                                .font(.title3)
-                                .padding(5)
-                                .background(.white)
-                                .foregroundColor(.black)
-                                .cornerRadius(15)
-                                .frame(maxWidth: 400, alignment: message.isOutgoing ? .trailing : .leading)
-                            
-                            if !message.isOutgoing { Spacer() }
-                        }
-                        .padding(.horizontal)
-                        .transition(.move(edge: .top))
-                        .flippedUpsideDown()
+        ScrollView {
+            LazyVStack(alignment: .center, spacing: 5) {
+                ForEach(viewModel.messages) { message in
+                    HStack(alignment: .center, spacing: 0) {
+                        if message.isOutgoing { Spacer() }
+                        
+                        Text(message.text.rendered(message.isOutgoing))
+                            .textSelection(.enabled)
+                            .font(.title3)
+                            .padding(5)
+                            .background(.white)
+                            .foregroundColor(.black)
+                            .cornerRadius(15)
+                            .frame(maxWidth: 500, alignment: message.isOutgoing ? .trailing : .leading)
+                        
+                        if !message.isOutgoing { Spacer() }
                     }
+                    .padding(.horizontal)
+                    .transition(
+                        .asymmetric(
+                            insertion: .move(edge: .top),
+                            removal: .move(edge: message.isOutgoing ? .trailing : .leading)
+                        )
+                    )
+                    .flippedUpsideDown()
                 }
-                .animation(.default, value: viewModel.messages)
             }
-            .flippedUpsideDown()
-            .onChange(of: viewModel.messages) { _ in
-                withAnimation {
-                    proxy.scrollTo(viewModel.messages.last?.id, anchor: .bottom)
-                }
-            }
+            .animation(.default, value: viewModel.messages)
         }
-        .frame(width: 500, height: 500)
+        .flippedUpsideDown()
+        .frame(width: 600, height: 500)
         .frame(maxWidth: .infinity)
         .background(.black)
         .safeAreaInset(edge: .top) {

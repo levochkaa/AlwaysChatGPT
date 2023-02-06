@@ -34,7 +34,6 @@
 		DFA46BC029903C3400B51F93 /* Choice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Choice.swift; sourceTree = "<group>"; };
 		DFA46BC829905C4C00B51F93 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		DFA46BCA29905CC800B51F93 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		DFA46BCC2990678000B51F93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +75,6 @@
 				DF4FCCF3298DBFF100E7D226 /* Assets.xcassets */,
 				DF4FCCF6298DBFF100E7D226 /* Preview Assets.xcassets */,
 				DF4FCCF8298DBFF100E7D226 /* AlwaysChatGPT.entitlements */,
-				DFA46BCC2990678000B51F93 /* Info.plist */,
 			);
 			path = AlwaysChatGPT;
 			sourceTree = "<group>";

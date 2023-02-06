@@ -26,8 +26,11 @@ extension String: CustomNSError {
         [NSLocalizedDescriptionKey: self]
     }
     
-    func withRenderedCode() -> AttributedString {
+    func rendered(_ isOutgoing: Bool) -> AttributedString {
         var savedSelf = self
+        if !savedSelf.isEmpty, !isOutgoing {
+            savedSelf.removeFirst()
+        }
         var attributedString = AttributedString(savedSelf)
         
         var codes = 0
@@ -40,14 +43,6 @@ extension String: CustomNSError {
                let secondRange = savedSelf.replacing("```", with: "", maxReplacements: 1).firstRange(of: "```") {
                 let range = attributedStringRange(for: attributedString, from: firstRange.upperBound..<secondRange.lowerBound)
                 attributedString[range].font = .title3.monospaced()
-                
-//                print("here \(savedSelf[firstRange.upperBound..<secondRange.lowerBound])")
-//                let url = URL(string: "alwayschatgpt:copy?code=print hello world")
-//                print("not url", url)
-//                attributedString[range].link = url
-//                attributedString[range].cursor = .pointingHand
-                
-                attributedString[range].foregroundColor = .black
                 let savedAttributedString = attributedString
                 attributedString.removeSubrange(attributedStringRange(for: savedAttributedString, from: firstRange))
                 attributedString.removeSubrange(attributedStringRange(for: savedAttributedString, from: secondRange))
