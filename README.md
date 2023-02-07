@@ -15,4 +15,4 @@ Conversation is **stored between sessions**.
 ![00 42 42 2RvzzcA4](https://user-images.githubusercontent.com/62802017/217094542-2aef2806-c168-446d-b75d-647eb06b664e.png)
 
 ## P. S.
-Made this app just for myself and to try `ChatGPT` API, before implementing it in `BetterTG` (my current main pet project)
+Made this app just for myself and to try **ChatGPT API**, before implementing it in `BetterTG` (my current main pet project)
