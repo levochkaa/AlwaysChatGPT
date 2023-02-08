@@ -26,10 +26,10 @@ final class ChatGPT {
     
     private let jsonDecoder = JSONDecoder()
     private var basePrompt: String {
-        """
-        You are ChatGPT, a large language model trained by OpenAI. Respond conversationally.
-        Do not answer as the user. Current date: \(dateFormatter.string(from: Date()))\n\n
-        """
+        "You are ChatGPT, a large language model trained by OpenAI. Respond conversationally. Do not answer as the user. Current date: \(dateFormatter.string(from: Date()))"
+        + "\n\n"
+        + "User: Hello\n"
+        + "ChatGPT: Hello! How can I help you today? <|im_end|>\n\n\n"
     }
     
     @AppStorage("historyListText") private var historyListText: String = ""
@@ -45,7 +45,7 @@ final class ChatGPT {
     
     private func jsonBody(text: String, stream: Bool = true) throws -> Data {
         let jsonBody: [String: Any] = [
-            "model": "text-chat-davinci-002-20221122",
+            "model": "text-davinci-003",
             "temperature": 0.5,
             "max_tokens": 1024,
             "prompt": generateChatGPTPrompt(from: text),
